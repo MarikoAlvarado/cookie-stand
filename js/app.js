@@ -1,8 +1,58 @@
 'use strict';
 
+//global var for hours
 
-// OBJECT SEATTLE
+var hours = ['6am ', '7am' , '8am ', '9am' , '10am ' , '11am ', '12pm' , '1pm ', '2pm ', '3pm ', '4pm ', '5pm ' , '6pm ' , '7pm'];
+
+// OBJECT SEATTLE //
 var seattle = {
+<<<<<<< HEAD
+  location: 'seattle',
+  minimumCustomersPerHour: 23,
+  maximumCustomersPerHour: 65,
+  avgCookiesPerCustomer: 6.3,
+  totalCookiesByDay: 0, //totaled at end of day
+
+  customersEachHour:[], //random number of customer PER hour to be created using loop
+  cookiesEachHour:[], //$$
+
+  // Need to generate how many customerEachHour using hoursArray
+  // Use provided minimumCustomersPerHour and maximumCustomersPerHour
+  generateCustomersEachHour: function(){
+    for(var x = 0; x < hours.length; x++){ //going through each hour set in global var hours and using inclusive
+      var randomNumber = Math.floor(Math.random() * (this.maximumCustomersPerHour - this.minimumCustomersPerHour + 1) + this.minimumCustomersPerHour); //The maximum is inclusive and the minimum is inclusive
+      this.customersEachHour.push(randomNumber); // each loop of random number of customers per hour adds up for customerEachHour
+    }
+  },
+  // NOW generate how many cookies are sold each hour in accordance to customersEachHour using global var hourArray and generateCustomerEachHour
+  generateCookiesSoldEachHour: function (){
+    this.generateCustomersEachHour(); //array of customers
+    for(var x = 0; x < hours.length; x++){
+      var cookiesSoldByHour = Math.ceil(this.customersEachHour[x] * this.avgCookiesPerCustomer);
+
+      this.totalCookiesByDay += cookiesSoldByHour;
+      this.cookiesEachHour.push(cookiesSoldByHour);
+    }
+  },
+  render: function(){
+    var parentSection = document.getElementById('seattle'); //use section id to parent element h2
+    var headingSeattle = document.createElement('h2'); //this creates an h2 heading
+    headingSeattle.textContent = this.location; //filling with content from "location" property
+    parentSection.appendChild(headingSeattle); //appending h2 to Section in DOM
+
+    var printSales = document.getElementById('seattle-sales'); //get ul id, which is now the parent element
+
+    for(var x = 0; x < this.cookiesEachHour.length; x++){ //looping cookies each hour
+
+      var liElement = document.createElement('li'); //creating new child element LI
+      liElement.textContent = `${hours[x]}: ${this.cookiesEachHour[x]} cookies`; //adding content of cookies each hour AT the hour
+      printSales.appendChild(liElement);
+    }
+
+  }
+
+
+=======
     location: 'seattle',
     minimumCustomersPerHour: 23,
     maximumCustomersPerHour: 65,
@@ -10,10 +60,59 @@ var seattle = {
     
     customersEachHour:[],
     cookieSalesEachHour:[],// customers each hour *averag customers each hour
+>>>>>>> main
 };
+seattle.generateCookiesSoldEachHour();
+seattle.render();
 
-// OBJECT TOKYO
+
+
+// OBJECT TOKYO //
 var tokyo = {
+<<<<<<< HEAD
+  location: 'tokyo',
+  minimumCustomersPerHour: 3,
+  maximumCustomersPerHour: 24,
+  avgCookiesPerCustomer: 1.2,
+  totalCookiesByDay: 0,
+
+  customersEachHour:[],
+  cookiesEachHour:[],
+
+  generateCustomersEachHour: function(){
+    for(var x = 0; x < hours.length; x++){
+      var randomNumber = Math.floor(Math.random() * (this.maximumCustomersPerHour - this.minimumCustomersPerHour + 1) + this.minimumCustomersPerHour); //The maximum is inclusive and the minimum is inclusive
+      this.customersEachHour.push(randomNumber);
+    }
+  },
+
+  generateCookiesSoldEachHour: function (){
+    this.generateCustomersEachHour();
+    for(var x = 0; x < hours.length; x++){
+      var cookiesSoldByHour = Math.ceil(this.customersEachHour[x] * this.avgCookiesPerCustomer);
+
+      this.totalCookiesByDay += cookiesSoldByHour;
+      this.cookiesEachHour.push(cookiesSoldByHour);
+    }
+  },
+  render: function(){
+    var parentSection = document.getElementById('tokyo'); //use section id to parent element h2
+    var headingSeattle = document.createElement('h2'); //this creates an h2 heading
+    headingSeattle.textContent = this.location; //filling with content from "location" property
+    parentSection.appendChild(headingSeattle); //appending h2 to Section in DOM
+
+    var printSales = document.getElementById('tokyo-sales'); //get ul id, which is now the parent element
+
+    for(var x = 0; x < this.cookiesEachHour.length; x++){ //looping cookies each hour
+
+      var liElement = document.createElement('li'); //creating new child element LI
+      liElement.textContent = `${hours[x]}: ${this.cookiesEachHour[x]} cookies`; //adding content of cookies each hour AT the hour
+      printSales.appendChild(liElement);
+    }
+
+  }
+
+=======
     location: 'tokyo',
     minimumCustomersPerHour: 3,
     maximumCustomersPerHour: 24,
@@ -21,10 +120,57 @@ var tokyo = {
     
     customersEachHour:[],
     cookieSalesEachHour:[],
+>>>>>>> main
 };
+
+tokyo.generateCookiesSoldEachHour();
+tokyo.render();
 
 // OBJECT DUBAI
 var dubai = {
+<<<<<<< HEAD
+  location: 'dubai',
+  minimumCustomersPerHour: 11,
+  maximumCustomersPerHour: 38,
+  avgCookiesPerCustomer: 3.7,
+
+
+  customersEachHour:[],
+  cookiesEachHour:[],
+
+  generateCustomersEachHour: function(){
+    for(var x = 0; x < hours.length; x++){
+      var randomNumber = Math.floor(Math.random() * (this.maximumCustomersPerHour - this.minimumCustomersPerHour + 1) + this.minimumCustomersPerHour); //The maximum is inclusive and the minimum is inclusive
+      this.customersEachHour.push(randomNumber);
+    }
+  },
+
+  generateCookiesSoldEachHour: function (){
+    this.generateCustomersEachHour();
+    for(var x = 0; x < hours.length; x++){
+      var cookiesSoldByHour = Math.ceil(this.customersEachHour[x] * this.avgCookiesPerCustomer);
+
+      this.totalCookiesByDay += cookiesSoldByHour;
+      this.cookiesEachHour.push(cookiesSoldByHour);
+    }
+  },
+  render: function(){
+    var parentSection = document.getElementById('dubai'); //use section id to parent element h2
+    var headingSeattle = document.createElement('h2'); //this creates an h2 heading
+    headingSeattle.textContent = this.location; //filling with content from "location" property
+    parentSection.appendChild(headingSeattle); //appending h2 to Section in DOM
+
+    var printSales = document.getElementById('dubai-sales'); //get ul id, which is now the parent element
+
+    for(var x = 0; x < this.cookiesEachHour.length; x++){ //looping cookies each hour
+
+      var liElement = document.createElement('li'); //creating new child element LI
+      liElement.textContent = `${hours[x]}: ${this.cookiesEachHour[x]} cookies`; //adding content of cookies each hour AT the hour
+      printSales.appendChild(liElement);
+    }
+
+  }
+=======
     location: 'dubai',
     minimumCustomersPerHour: 11,
     maximumCustomersPerHour: 38,
@@ -32,10 +178,35 @@ var dubai = {
     
     customersEachHour:[],
     cookieSalesEachHour:[],
+>>>>>>> main
 };
+
+dubai.generateCookiesSoldEachHour();
+dubai.render();
 
 // OBJECT PARIS
 var paris = {
+<<<<<<< HEAD
+  location: 'paris',
+  minimumCustomersPerHour: 20,
+  maximumCustomersPerHour: 38,
+  avgCookiesPerCustomer: 2.3,
+
+  customersEachHour:[],
+  cookiesEachHour:[],
+
+  generateCustomersEachHour: function(){
+    for(var x = 0; x < hours.length; x++){
+      var randomNumber = Math.floor(Math.random() * (this.maximumCustomersPerHour - this.minimumCustomersPerHour + 1) + this.minimumCustomersPerHour); //The maximum is inclusive and the minimum is inclusive
+      this.customersEachHour.push(randomNumber);
+    }
+  },
+
+  generateCookiesSoldEachHour: function (){
+    this.generateCustomersEachHour();
+    for(var x = 0; x < hours.length; x++){
+      var cookiesSoldByHour = Math.ceil(this.customersEachHour[x] * this.avgCookiesPerCustomer);
+=======
     location: 'paris',
     minimumCustomersPerHour: 20,
     maximumCustomersPerHour: 38,
@@ -54,10 +225,23 @@ var lima = {
     
     customersEachHour:[],
     cookieSalesEachHour:[],
+>>>>>>> main
 
+      this.totalCookiesByDay += cookiesSoldByHour;
+      this.cookiesEachHour.push(cookiesSoldByHour);
+    }
+  },
+  render: function(){
+    var parentSection = document.getElementById('paris'); //use section id to parent element h2
+    var headingSeattle = document.createElement('h2'); //this creates an h2 heading
+    headingSeattle.textContent = this.location; //filling with content from "location" property
+    parentSection.appendChild(headingSeattle); //appending h2 to Section in DOM
 
-};
+    var printSales = document.getElementById('paris-sales'); //get ul id, which is now the parent element
 
+<<<<<<< HEAD
+    for(var x = 0; x < this.cookiesEachHour.length; x++){ //looping cookies each hour
+=======
 //    How many customers each hour?
 function sales(minimumCustomersPerHour, maximumCustomersPerHour){
     var min = Math.ceil(minimumCustomersPerHour); 
@@ -74,43 +258,62 @@ function sales(minimumCustomersPerHour, maximumCustomersPerHour){
     object.cookieSalesEachHour.push(salesRand);
     object.customersEachHour.push(Math.floor(object.avgCookieSale * salesRand)); // NEED CUSTOMER PER HR * avgCookieSale
     console.log('customer/hr ', object.customersEachHour, 'sales/hr ', object.cookieSalesEachHour);
+>>>>>>> main
 
+      var liElement = document.createElement('li'); //creating new child element LI
+      liElement.textContent = `${hours[x]}: ${this.cookiesEachHour[x]} cookies`; //adding content of cookies each hour AT the hour
+      printSales.appendChild(liElement);
     }
-    return object;
 
+  }
+};
 
+paris.generateCookiesSoldEachHour();
+paris.render();
 
- }
+// OBJECT LIMA
+var lima = {
+  location: 'lima',
+  minimumCustomersPerHour: 2,
+  maximumCustomersPerHour: 16,
+  avgCookiesPerCustomer: 4.6,
 
- calculate(seattle);
- calculate(tokyo);
- calculate(dubai);
- calculate(paris);
- calculate(lima);
+  customersEachHour:[],
+  cookiesEachHour:[],
 
-//  DOM=DOCUMENT OBJECT MODEL
-
-//  1. CREATE ID ELEMENT 
-//  2. GET CONTENT (document.getelementbyid)
-//  3. APPEND IT TO DOM 
-
-var locationArray = [seattle, tokyo, dubai, paris, lima]; //location names listed through each object
-var SalesPerHour = [seattle, tokyo, dubai, paris, lima]; //cookie sales each hour by each location
-
-    for (var i = 0; i < locationArray.length; i++){ //loop through each city for the length of number of cities listed in array
-        var shopLocation = locationArray[i].location; // generate shopLocation name each time from array
-        // console.log(shopLocation);
-        
-        var cityTitle = document.getElementById('shopLocation');
-        var thElement = document.createElement('th');
-
-        thElement.textContent = shopLocation;
-        cityTitle.appendChild(thElement);
-        console.log(element, cityName);
-        
-    // for (var x = 0; x < 14; x++){ //hour loop WITHIN location loop
-    //         var hourlySales = x + 1;
-    //         var sales = SalesPerHour[x].cookieSalesEachHour;
-
-    //     }
+  generateCustomersEachHour: function(){
+    for(var x = 0; x < hours.length; x++){
+      var randomNumber = Math.floor(Math.random() * (this.maximumCustomersPerHour - this.minimumCustomersPerHour + 1) + this.minimumCustomersPerHour); //The maximum is inclusive and the minimum is inclusive
+      this.customersEachHour.push(randomNumber);
     }
+  },
+
+  generateCookiesSoldEachHour: function (){
+    this.generateCustomersEachHour();
+    for(var x = 0; x < hours.length; x++){
+      var cookiesSoldByHour = Math.ceil(this.customersEachHour[x] * this.avgCookiesPerCustomer);
+
+      this.totalCookiesByDay += cookiesSoldByHour;
+      this.cookiesEachHour.push(cookiesSoldByHour);
+    }
+  },
+  render: function(){
+    var parentSection = document.getElementById('lima'); //use section id to parent element h2
+    var headingSeattle = document.createElement('h2'); //this creates an h2 heading
+    headingSeattle.textContent = this.location; //filling with content from "location" property
+    parentSection.appendChild(headingSeattle); //appending h2 to Section in DOM
+
+    var printSales = document.getElementById('lima-sales'); //get ul id, which is now the parent element
+
+    for(var x = 0; x < this.cookiesEachHour.length; x++){ //looping cookies each hour
+
+      var liElement = document.createElement('li'); //creating new child element LI
+      liElement.textContent = `${hours[x]}: ${this.cookiesEachHour[x]} cookies`; //adding content of cookies each hour AT the hour
+      printSales.appendChild(liElement);
+    }
+
+  }
+};
+
+lima.generateCookiesSoldEachHour();
+lima.render();
