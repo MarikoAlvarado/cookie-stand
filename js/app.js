@@ -4,19 +4,19 @@
 // OBJECT SEATTLE
 var seattle = {
     location: 'seattle',
-    minCustHour: 23,
-    maxCustHour: 65,
-    avgCookieSale: 6.3, 
+    minimumCustomersPerHour: 23,
+    maximumCustomersPerHour: 65,
+    averageCookiesPerCustomer: 6.3, 
     
     customersEachHour:[],
-    cookieSalesEachHour:[],
+    cookieSalesEachHour:[],// customers each hour *averag customers each hour
 };
 
 // OBJECT TOKYO
 var tokyo = {
     location: 'tokyo',
-    minCustHour: 3,
-    maxCustHour: 24,
+    minimumCustomersPerHour: 3,
+    maximumCustomersPerHour: 24,
     avgCookieSale: 1.2,  //$
     
     customersEachHour:[],
@@ -26,8 +26,8 @@ var tokyo = {
 // OBJECT DUBAI
 var dubai = {
     location: 'dubai',
-    minCustHour: 11,
-    maxCustHour: 38,
+    minimumCustomersPerHour: 11,
+    maximumCustomersPerHour: 38,
     avgCookieSale: 3.7,  //$
     
     customersEachHour:[],
@@ -37,8 +37,8 @@ var dubai = {
 // OBJECT PARIS
 var paris = {
     location: 'paris',
-    minCustHour: 20,
-    maxCustHour: 38,
+    minimumCustomersPerHour: 20,
+    maximumCustomersPerHour: 38,
     avgCookieSale: 2.3,  //$
 
     customersEachHour:[],
@@ -48,8 +48,8 @@ var paris = {
 // OBJECT LIMA
 var lima = {
     location: 'lima',
-    minCustHour: 2,
-    maxCustHour: 16,
+    minimumCustomersPerHour: 2,
+    maximumCustomersPerHour: 16,
     avgCookieSale: 4.6,  //$
     
     customersEachHour:[],
@@ -59,9 +59,9 @@ var lima = {
 };
 
 //    How many customers each hour?
-function sales(minCustHour, maxCustHour){
-    var min = Math.ceil(minCustHour); 
-    var max = Math.floor(maxCustHour);
+function sales(minimumCustomersPerHour, maximumCustomersPerHour){
+    var min = Math.ceil(minimumCustomersPerHour); 
+    var max = Math.floor(maximumCustomersPerHour);
     return Math.floor(Math.random() * (max - min) + min);
     
 }
@@ -69,7 +69,7 @@ function sales(minCustHour, maxCustHour){
 //    How many cookies each hour? 
  function calculate(object){
     for (var h = 0; h < 14; h++){
-    var salesRand = Math.floor(sales(object.minCustHour, object.maxCustHour));
+    var salesRand = Math.floor(sales(object.minimumCustomersPerHour, object.maximumCustomersPerHour));
     
     object.cookieSalesEachHour.push(salesRand);
     object.customersEachHour.push(Math.floor(object.avgCookieSale * salesRand)); // NEED CUSTOMER PER HR * avgCookieSale
