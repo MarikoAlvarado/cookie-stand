@@ -4,7 +4,7 @@ var hours = ['6am ', '7am', '8am ', '9am', '10am ', '11am ', '12pm', '1pm ', '2p
 
 var allStores = [];
 // my global function, it doesn't have anything specified but it ready to create a random number when called for
-function getRandomNumber(minimumCustomersPerHour, maximumCustomersPerHour){
+function getRandomNumber(minimumCustomersPerHour, maximumCustomersPerHour) {
   var randomNumber = Math.floor(Math.random() * (maximumCustomersPerHour - minimumCustomersPerHour) + minimumCustomersPerHour); //The maximum is inclusive and the minimum is inclusive
   // console.log(randomNumber);
   return randomNumber;
@@ -25,13 +25,14 @@ function Stores(name, minimumCustomersPerHour, maximumCustomersPerHour, avgCooki
     this.numberOfCookiesSoldByHour.push(cookiesPerHour); // cookies per hour total is pushed into numberOfCookiesSoldByHour
   }
   // my for loop that calculate total of cookies sold each day at at each location
-  for(var i = 0; i < this.numberOfCookiesSoldByHour.length; i++){ // loops for the length of numberOfCookiesSoldByHour
+  for (var i = 0; i < this.numberOfCookiesSoldByHour.length; i++) { // loops for the length of numberOfCookiesSoldByHour
     this.totalCookiesByDay = this.totalCookiesByDay + this.numberOfCookiesSoldByHour[i];
 
   }
 
   allStores.push(this); //brings it to life
 }
+
 var seattle = new Stores('seattle', 23, 65, 6.3);
 var tokyo = new Stores('tokyo', 3, 24, 1.2);
 var dubai = new Stores('dubai', 11, 38, 3.7);
@@ -40,17 +41,17 @@ var lima = new Stores('lima', 2, 16, 4.6);
 
 console.log(allStores);
 
-//////////////////////////////////RENDERING HEADER////////////////////////////////////////////////////
+////////////////////////////////RENDERING HEADER////////////////////////////////////////////////////
 
 var salesSection = document.getElementById('sales');
 
-function renderTopRow(){
+function renderTopRow() {
   var trElement = document.createElement('tr');//creating a row of 'th' cells
   var thElement = document.createElement('th');
   trElement.appendChild(thElement);
   salesSection.appendChild(trElement);
 
-  for (var i = 0; i < hours.length; i++){
+  for (var i = 0; i < hours.length; i++) {
     var headerHours = document.createElement('th');
     headerHours.textContent = hours[i];
     trElement.appendChild(headerHours);
@@ -62,7 +63,7 @@ function renderTopRow(){
 renderTopRow();
 ////////////////////////////////RENDERING DATA ROWS/////////////////////////////////////////////////
 
-Stores.prototype.body = function(){
+Stores.prototype.body = function () {
   var bodyRow = document.createElement('tr');
   salesSection.appendChild(bodyRow);
 
@@ -72,7 +73,7 @@ Stores.prototype.body = function(){
   bodyRow.appendChild(cityRow);
 
   //hours using loop
-  for (var i = 0; i < hours.length; i++){
+  for (var i = 0; i < hours.length; i++) {
     var bodyHours = document.createElement('td');
     bodyHours.textContent = this.numberOfCookiesSoldByHour[i];
     bodyRow.appendChild(bodyHours);
@@ -88,3 +89,38 @@ tokyo.body();
 dubai.body();
 paris.body();
 lima.body();
+
+//////////////////////////RENDERING TOTAL ALL LOCATIONS BY HOUR AND EOD////////////////////////////////
+// createing a new TH heading with TH/TD's for TOTALS for each hour using loop
+//creating last TD cell with total of ALL locations at end of day
+
+// var allStores is my allStores array
+// var hours is my hours array
+
+function renderFooter() {
+  var totalsRow = document.createElement('tr');
+  var tdTotals = document.createElement('td');
+  tdTotals.textContent = 'Total';
+  totalsRow.appendChild(tdTotals);
+
+  var allTotalsByHour = 0;
+  var grandTotal = 0;
+
+  for (var t = 0; t < hours.length; t++) {
+    allTotalsByHour = 0;
+    for (var a = 0; a < allStores.length; a++) {
+      allTotalsByHour = allTotalsByHour + allStores[a].numberOfCookiesSoldByHour[t];
+    }
+    grandTotal = grandTotal + allTotalsByHour;
+    tdTotals = document.createElement('td');
+    tdTotals.textContent = allTotalsByHour;
+    totalsRow.appendChild(tdTotals);
+
+  }
+  tdTotals = document.createElement('td');
+  tdTotals.textContent = grandTotal;
+  totalsRow.appendChild(tdTotals);
+
+  salesSection.appendChild(totalsRow);
+}
+renderFooter();
