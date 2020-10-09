@@ -1,0 +1,101 @@
+
+body{
+
+    background-color: rgb(185, 119, 112);
+}
+
+#header{
+    
+    position: center;
+    border-style: double;
+    border-color: rgb(105, 60, 55);
+    border-width: 15px;
+    margin: 60px;
+    padding: 30px;
+    max-width: 100%;
+    height: auto;
+
+}
+
+#salmon{
+
+    width: 100%;
+    height: auto;
+    margin: auto;
+    
+}
+
+h1{
+
+    text-align: center;
+
+}
+
+header p{
+
+    text-align: center;
+
+}
+
+
+
+
+#cookies{
+    border-style: double;
+    border-color: rgb(105, 60, 55);
+    border-width: 5px;
+    width: 400px;
+    padding: 30px;
+    margin-left: 100px;
+
+}
+
+
+#family{
+    
+    width: 100%;
+    height: auto;
+    margin: auto;
+
+}
+
+#about{
+
+    border-style: double;
+    border-color: rgb(105, 60, 55);
+    border-width: 5px;
+    width: 400px;
+    padding: 30px;
+    float: right;
+    margin-right: 100px;
+    
+    
+
+}
+
+#locations{
+
+    border-style: double;
+    border-color: rgb(105, 60, 55);
+    border-width: 5px;
+    width: 300px;
+    height: 500px;
+    padding: 10px;
+    margin: 30px;
+
+}
+
+#fish{
+    width: 200px;
+    position: center;
+    float: right;
+    
+}
+
+#merch{
+
+    border-style: double;
+    border-color: rgb(105, 60, 55);
+    border-width: 5px;
+
+}
