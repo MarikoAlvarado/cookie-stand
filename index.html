@@ -1,109 +1,182 @@
+<!-- locations with addresses,
+-hours open
+
+-contact information
+
+-Anything else you feel neccesary.
+
+-A link to your sales.html page
+
+-Be sure to also include a link to your 
+index.html page on your sales.html pages as well. -->
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
     <title>Salmon Cookies!</title> 
     <link href="css/reset.css" rel="stylesheet" type="text/css"/>
     <link href="css/home.css" rel="stylesheet" type="text/css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Yellowtail&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&display=swap" rel="stylesheet">
 
 </head>
 
 <body>
-  <section id="header">
+
+
+    <!-- ///////////////////// HEADERdiv//////////////////////// -->
+<div id="header">
 
     <header>
-        <img id="salmon" src="salmon.png" />
-        <h1>World Famous Salmon Cookies!</h1>
-        <p> Call Us! 559-206-0587</p>
+        <img id="salmon" src="img/salmon.png" />
+        <h1 id="title">World - Famous Salmon Cookies!</h1>
+        <p id="callus"> Give Us A Call! (559) 206-0587</p>
+        <p id="hours"> Open Daily 6 AM - 8 PM</p>
+        <a id="sales" href="sales.html">Sales</a>
     </header>
-  </section>
 
+</div>
+<!-- //////////////////////////// ABOUT OUR COOKIES ////////////////////////// -->
     <main>
 
-        
-    
+    <div id="cookies">
 
-        <section id="cookies">
+        <h2 id="whatare">What Are Salmon Cookies?</h2>
+        <p id="text1">You might be wondering what a salmon cookie even is, and we are thrilled to tell you that they are exactly what it sounds like!
+            We introduce to you, our world-famous cookies created with love from a secret family recipe! These cookies are guaranteed to have you coming
+            back for more so that you can share them with your friends and family!
+ 
+            Our first ever location opened it's doors in Seattle, Wa in 2017 and the love for these unique treats has since been discovered and shared around
+            the world! Currently spreading joy out of 5 location, you can find our cookies in Tokyo, Lima, Paris, Dubai - and of course in the great PNW!
+            
+            Give us a call, put in an order ahead of time to beat the lines, or even better - just come on by to try them fresh out of the oven!
+        </p>
 
-        <h2>What Are Salmon Cookies?</h2>
-        <p>they are exactly what they sound like, cookies with a hint of flavorful salmon</p>
-        <img id="cutter" src="cutter.jpeg" />
-        <img id="frosted" src="frosted-cookie.jpg" />
+        <img id="cutter" src="img/cutter.jpeg" />
+        <img id="frosted" src="img/frosted-cookie.jpg" />
 
-        </section>
+    <div>
 
-        <section id="about">
-            <h2>About Us</h2>
-            <p>Lorem Ipsumdgaergseagsg</p>
-            <img id="family" src="family.jpg" />
-        </section>
-        
-    
-      
-        
-        <section id="locations">
-            <h2>Locations and Business Hours</h2>
-            <p id="hours">Hours: 6am - 8pm</p>
+<!-- //////////////////////////// LOCATIONS ///////////////////////////////////////         -->
+    <div id="locations">
+       
+        <h2 id="locFont1">Locations</h2>
+           
+            <section>
+            <ul id="flex">
 
-            <ul class="addresses">
-            <h3>Seattle</h3>
-            <address>
-               <a href="...">
+            <li>
+                <h3 class="locFont">Seattle</h3>
+                <address>
+               <a class="address" href="...">
                 1420 Salmon Street<br>
                 Seattle, WA 98144<br>
                 USA
                 </a>
-            
-            </address>
+                </address>
 
-            <h3>Tokyo</h3>
-            <address>
-               <a href="...">
+            </li>
+
+            <li>
+                <h3 class="locFont">Tokyo</h3>
+                <address>
+                <a class="address" href="...">
                 142-2524, Salmon Street<br>
                 Tokyo, Japan
                 </a>
-            </address>
+                </address>
+            </li>
 
-            <h3>Dubai</h3>
-            <address>
-               <a href="...">
+            <li>
+
+                <h3 class="locFont">Dubai</h3>
+
+                <address>
+
+                <a class="address" href="...">
                 15355<br>
                 Dubai, Dubai 87492<br>
                 Emirates
                 </a>
-            </address>
 
-            <h3>Paris</h3>
-            <address>
-               <a href="...">
-                4507 Salmon Ave<br>
+                </address>
+            </li>
+
+            <li>
+
+                <h3 class="locFont">Paris</h3>
+                <address>
+
+                <a class="address" href="...">
+                4507 Salmon St<br>
                 Paris, France 9785754<br>
-                
                 </a>
-            </address>
 
-            <h3>Lima</h3>
-            <address>
-               <a href="...">
+                </address>
+            </li>
+
+            <li>
+                <h3 class="locFont">Lima</h3>
+                <address>
+                <a class="address" href="...">
                 Salmon 456789<br>
                 Lima 34644<br>
                 Peru
                 </a>
-            </address>
-            <img id="fish" src="fish.jpg" />
-        </section>
 
-        <section id="merch">
-            <h3>Merch on the way!</h3>
-            <img id="shirt" src="shirt.jpg" />
-        </section>
-        </div>
-    </main>
-<footer>
-    <img id="chinook" src="chinook.jpg" />
-    Salmon Cookies
-</footer>
-<a href="sales.html">Sales</a>
-<script type="text/javascript" src="js/app.js"></script>
+               </address>
+
+            </li>   
+            
+    </div>
+
+            
+            
+
+<!-- /////////////////////// MERCH ////////////////////////////////////////// -->
+    <div id="merch">
+            <h3 id="gear">Merch Is On The Way!</h3>
+            <p id="holdTight">Hold tight!<br>
+                 We have hats, beanies, hoodies, boxers, shirts<br>
+                 and custom cookie-cutters on the way!</p>
+            <section id="gearpic">
+            <img id="shirt" src="img/shirt.jpg" />
+            </section>
+            <img id="fish" src="img/fish.jpg" />
+    </div>
+    
+<!-- ////////////////////////// ABOUT OUR FAMILY ////////////////////////////////// -->
+    <div id="about">
+        <h4 id="meet">Meet Our Family</h2>
+        <p id="story">We are the Cutters! Karen Cutter and husband Tom Cutter met on a deep sea fishing tour in 2007 and our love for salmon brought us together!
+            Tom has always had a love for baking and Karen dreamt of one day owning a small local business in her hometown, Seattle, Wa. Together they 
+            have two wonderful children who have grown to love baking just as much as Tom. You may be wondering where the idea of salmon cookies came from.
+            When our youngest, Jonny was 4 years old we found he had gotten into the bag of salmon flavored dog treat. It was easy to see just how much
+            he enjoyed the delicious flavor so we decided to create a new human friendly recipe. After sharing with some friends, we were surprised to learn
+            just how much they enjoyed the cookies as well so we took to the local farmers market. And here we are! With currently 5 stands around the world
+            we have been able to share our unique, yet delectable salmon cookies!
+        </p>
+
+        <h5 id="business">Thank You For Supporting Our Business!</h5>
+        <img id="family" src="img/family.jpg" />
+    </div>
+
+
+   
+<!-- /////////////////////////// FOOTER /////////////////////////////////////// -->
+
+<img id="chinook" src="img/chinook.jpg" />
+
+<!-- <div id="footer"> -->
+<footer id="footer">
+    <!-- <img id="chinook" src="img/chinook.jpg" /> -->
+    Salmon Cookies 2020
+<!-- </footer> -->
+
+</div>
+
+
 </body>
-
 </html>
