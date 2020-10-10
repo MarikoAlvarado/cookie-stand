@@ -7,6 +7,7 @@ body{
 #header{
     
     position: center;
+    background-color: rgb(70, 44, 41);
     border-style: double;
     border-color: rgb(105, 60, 55);
     border-width: 15px;
@@ -14,6 +15,39 @@ body{
     padding: 30px;
     max-width: 100%;
     height: auto;
+
+}
+
+#sales{
+    
+    color: snow;
+    float: right;
+    
+}
+
+#title{
+    font-size: 50px;
+    color: rgb(252, 252, 252);
+    font-family: 'Yellowtail', cursive;
+    text-align: center;
+    
+
+}
+
+#callus{
+
+    font-family: serif ;
+    color: rgb(252, 252, 252);
+    text-align: center;
+    
+
+}
+
+#hours{
+
+    font-family: serif ;
+    color: rgb(252, 252, 252);
+    text-align: center;
 
 }
 
@@ -25,77 +59,229 @@ body{
     
 }
 
-h1{
-
-    text-align: center;
-
-}
-
-header p{
-
-    text-align: center;
-
-}
 
 
 
 
 #cookies{
+
+    position: center;
+    background-color: rgb(112, 87, 87);
     border-style: double;
     border-color: rgb(105, 60, 55);
-    border-width: 5px;
-    width: 400px;
+    border-width: 15px;
+    margin: 60px;
     padding: 30px;
-    margin-left: 100px;
+    max-width: 100%;
+    height: 375px;
+}
+
+#whatare{
+
+    font-family: 'Nothing You Could Do', cursive;
+    font-size: xx-large;
+    color: rgb(255, 208, 208);
+    margin-bottom: 50px;
+    text-align: center;
+
 
 }
 
+#text1{
 
-#family{
-    
-    width: 100%;
-    height: auto;
-    margin: auto;
+    font-family: serif ;
+    color: rgb(252, 252, 252);
+    text-align: center;
+
+
+
+}
+
+#cutter{
+
+    height: 175px;
+    margin: 20px 50px 10px 80px;
 
 }
 
-#about{
-
-    border-style: double;
-    border-color: rgb(105, 60, 55);
-    border-width: 5px;
-    width: 400px;
-    padding: 30px;
-    float: right;
-    margin-right: 100px;
-    
-    
-
+#frosted{
+    height: 175px;
+    margin: 20px 50px 10px 80px;
 }
+
 
 #locations{
-
+    
+    position: center;
+    background-color: rgb(70, 44, 41);
     border-style: double;
     border-color: rgb(105, 60, 55);
-    border-width: 5px;
-    width: 300px;
-    height: 500px;
-    padding: 10px;
-    margin: 30px;
+    border-width: 15px;
+    margin: 60px;
+    padding: 30px;
+    max-width: 100%;
+    height: 200px;
+}
+
+#flex{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
 
 }
 
-#fish{
-    width: 200px;
-    position: center;
-    float: right;
-    
+#locFont1{
+
+    font-family: 'Nothing You Could Do', cursive;
+    font-size: xx-large;
+    color: rgb(255, 208, 208);
+    margin-bottom: 50px;
+    text-align: center;
+
 }
+
+.locFont{
+
+    font-family: 'Nothing You Could Do', cursive;
+    font-size: medium;
+    color: rgb(252, 252, 252);
+    margin-bottom: 5px;
+
+}
+
+.address{
+
+    font-family: serif ;
+    color: rgb(252, 252, 252);
+
+}
+
+
 
 #merch{
 
+    position: center;
+    background-color: rgb(112, 87, 87);
     border-style: double;
     border-color: rgb(105, 60, 55);
+    border-width: 15px;
+    margin: 60px;
+    padding: 30px;
+    max-width: 100%;
+    height: 420px;
+}
+
+#gear{
+
+    font-family: 'Nothing You Could Do', cursive;
+    font-size: xx-large;
+    color: rgb(255, 208, 208);
+    margin-bottom: 20px;
+    text-align: center;
+
+}
+
+#holdTight{
+    text-align: center;
+    font-family: serif ;
+    color: rgb(252, 252, 252);
+
+}
+
+#gearpic{
+
+    display: center;
+    margin-left: 100px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+
+}
+
+
+#shirt{
+    display: center;
+    width: auto;
+    border-style: outset;
     border-width: 5px;
+    border-color: rgb(124, 16, 16);
+}
+
+
+#about{
+
+    position: center;
+    background-color: rgb(112, 87, 87);
+    border-style: double;
+    border-color: rgb(105, 60, 55);
+    border-width: 15px;
+    margin: 60px;
+    padding: 40px;
+    max-width: 100%;
+    height: 600px;
+
+}
+
+
+#meet{
+
+    font-family: 'Nothing You Could Do', cursive;
+    font-size: xx-large;
+    color: rgb(255, 208, 208);
+    margin-bottom: 20px;
+    text-align: center;
+    
+
+}
+
+#story{
+
+    text-align: left;
+    font-family: serif ;
+    color: rgb(252, 252, 252);
+
+}
+
+#business{
+
+    font-family: 'Nothing You Could Do', cursive;
+    font-size: large;
+    color: rgb(255, 208, 208);
+    margin-bottom: 5px;
+    margin-top: 20px;
+    text-align: center;
+
+}
+
+
+
+#family{
+    width: 100%;
+    height: 395px
+    
+    
+}
+
+#footer{
+
+align-content: center;
+
+}
+
+
+#fish{
+
+    height: 90px;    
+    
+    border-radius: 50%;
+    position: relative;
+    float: right;
+    
+}
+
+#chinook{
+    
+    margin-top: -20px;
+    margin-left: 320px;
+    height: 30px;
 
 }
